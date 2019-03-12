@@ -8,12 +8,18 @@ namespace RandomizerLib
 {
 	public class Tank
 	{
-		HeroModel dva = new HeroModel("D Va", "Tank");
-		HeroModel orisa = new HeroModel("Orisa", "Tank");
-		HeroModel reinhardt = new HeroModel("Reinhardt", "Tank");
-		HeroModel roadhog = new HeroModel("Roadhog", "Tank");
-		HeroModel winston = new HeroModel("Winston", "Tank");
-		HeroModel wreckingBall = new HeroModel("Wrecking Ball", "Tank");
-		HeroModel zarya = new HeroModel("Zarya", "Tank");
+		//const string heroClass = "Tank";
+		//HeroModel dva = new HeroModel("D.Va", heroClass);
+		//HeroModel orisa = new HeroModel("Orisa", heroClass);
+		//HeroModel reinhardt = new HeroModel("Reinhardt", heroClass);
+		//HeroModel roadhog = new HeroModel("Roadhog", heroClass);
+		//HeroModel winston = new HeroModel("Winston", heroClass);
+		//HeroModel wreckingBall = new HeroModel("Wrecking Ball", heroClass);
+		//HeroModel zarya = new HeroModel("Zarya", heroClass);
+
+		//public string TestMethod()
+		//{
+		//	return dva.HeroName;
+		//}
 	}
 }

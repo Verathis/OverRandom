@@ -9,11 +9,16 @@ namespace RandomizerLib
 	public class HeroModel
 	{
 		public string HeroName { get; set; }
-		public string HeroClass	{ get; set; }
+		public string HeroClass { get; set; }
 
-		public HeroModel(string HeroName, string HeroClass)
+		public HeroModel()
 		{
+		}
 
+		public HeroModel(string heroName, string heroClass) : this()
+		{
+			this.HeroName = heroName;
+			this.HeroClass = heroClass;
 		}
 	}
 }
