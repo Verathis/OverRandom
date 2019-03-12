@@ -6,9 +6,8 @@ using System.Threading.Tasks;
 
 namespace RandomizerLib
 {
-	class RandomSelector
+	public class RandomSelector
 	{
-		Random randomInt = new Random();
-
+		Random random = new Random();
 	}
 }

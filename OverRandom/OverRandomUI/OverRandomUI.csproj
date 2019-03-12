@@ -81,5 +81,11 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\RandomizerLib\RandomizerLib.csproj">
+      <Project>{9b0099af-f87e-454f-a1ed-218aa37ac959}</Project>
+      <Name>RandomizerLib</Name>
+    </ProjectReference>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
