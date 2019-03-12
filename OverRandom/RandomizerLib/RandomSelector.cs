@@ -8,5 +8,7 @@ namespace RandomizerLib
 {
 	class RandomSelector
 	{
+		Random randomInt = new Random();
+
 	}
 }
