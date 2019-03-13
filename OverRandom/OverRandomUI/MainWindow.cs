@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Drawing.Text;
 using RandomizerLib;
+using System.Runtime.InteropServices;
 
 namespace OverRandomUI
 {
@@ -22,6 +23,7 @@ namespace OverRandomUI
 
 		Font headerFont;
 		Font labelFont;
+		Font buttonFont;
 
 		RandomSelector randomSelection = new RandomSelector();
 
@@ -38,7 +40,8 @@ namespace OverRandomUI
 			System.Runtime.InteropServices.Marshal.FreeCoTaskMem(fontPtr);
 
 			headerFont = new Font(fonts.Families[0], 60.0F);
-			labelFont = new Font(fonts.Families[0], 24.0F);			
+			labelFont = new Font(fonts.Families[0], 24.0F);
+			buttonFont = new Font(fonts.Families[0], 16.0F);
 		}
 
 		private void MainWindow_Load(object sender, EventArgs e)
@@ -47,6 +50,9 @@ namespace OverRandomUI
 			randomHealerLabel.Font = labelFont;
 			randomDamageLabel.Font = labelFont;
 			overRandomLabel.Font = headerFont;
+			randomDamageButton.Font = buttonFont;
+			randomHealerButton.Font = buttonFont;
+			randomTankButton.Font = buttonFont;
 		}
 
 		private void randomTankButton_Click(object sender, EventArgs e)
@@ -63,6 +69,19 @@ namespace OverRandomUI
 		private void randomDamageButton_Click(object sender, EventArgs e)
 		{
 			randomDamageLabel.Text = randomSelection.RandomDamage().HeroName;
+		}
+
+		public const int WM_NCLBUTTONDOWN = 0xA1;
+		public const int HT_CAPTION = 0x2;
+		[DllImportAttribute("user32.dll")]
+		public static extern int SendMessage(IntPtr hWnd, int Msg, int wParam, int lParam);
+		[DllImportAttribute("user32.dll")]
+		public static extern bool ReleaseCapture();
+
+		private void movementPanel_MouseDown(object sender, MouseEventArgs e)
+		{
+			ReleaseCapture();
+			SendMessage(this.Handle, WM_NCLBUTTONDOWN, HT_CAPTION, 0);
 		}
 	}
 }
