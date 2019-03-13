@@ -17,6 +17,16 @@ namespace RandomizerLib
 
 		}
 
+		public HeroModel RandomAny()
+		{
+			CheckHeroListPopulated();
+			
+			int randomIndex = random.Next(allHeroes.Count);
+			HeroModel randomHero = allHeroes[randomIndex];
+
+			return randomHero;
+		}
+
 		public HeroModel RandomTank()
 		{
 			CheckHeroListPopulated();
@@ -48,6 +58,45 @@ namespace RandomizerLib
 			HeroModel randomDamage = randomDamageList[randomIndex];
 
 			return randomDamage;
+		}
+
+		public List<HeroModel> RandomTwoOfEach()
+		{
+			CheckHeroListPopulated();
+
+			List<HeroModel> twoOfEach = new List<HeroModel>();
+			List<HeroModel> randomTankList = TagFinder("Tank");
+			List<HeroModel> randomSupportList = TagFinder("Support");
+			List<HeroModel> randomDamageList = TagFinder("Damage");
+			//List<HeroModel> twoTanks = TwoUniqueRandoms(randomTankList);
+			//List<HeroModel> twoSupport = TwoUniqueRandoms(randomSupportList);
+			//List<HeroModel> twoDamage = TwoUniqueRandoms(randomDamageList);
+			//twoOfEach.AddRange(twoTanks);
+			//twoOfEach.AddRange(twoSupport);
+			//twoOfEach.AddRange(twoDamage);
+			twoOfEach.AddRange(TwoUniqueRandoms(randomTankList));
+			twoOfEach.AddRange(TwoUniqueRandoms(randomSupportList));
+			twoOfEach.AddRange(TwoUniqueRandoms(randomDamageList));
+			return twoOfEach;
+		}
+
+		private List<HeroModel> TwoUniqueRandoms(List<HeroModel> models)
+		{
+			List<HeroModel> twoUniqueRandomHeroes = new List<HeroModel>();
+			List<int> randomNumbers = new List<int>();
+			
+			for (int i = 0; i < 2;)
+			{
+				int randomIndex = random.Next(models.Count);
+				if(!randomNumbers.Contains(randomIndex))
+				{
+					HeroModel randomHero = models[randomIndex];
+					twoUniqueRandomHeroes.Add(randomHero);
+					randomNumbers.Add(randomIndex);
+					i++;
+				}
+			}
+			return twoUniqueRandomHeroes;
 		}
 
 		private List<HeroModel> TagFinder(string tag)
