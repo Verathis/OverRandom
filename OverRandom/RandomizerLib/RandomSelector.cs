@@ -10,43 +10,67 @@ namespace RandomizerLib
 	{
 		Random random = new Random();
 
-		List<HeroModel> allTanks = new List<HeroModel>();
-		List<HeroModel> allSupport = new List<HeroModel>();
+		List<HeroModel> allHeroes = new List<HeroModel>();
 
 		public RandomSelector()
 		{
 
 		}
 
-		public string RandomTank()
+		public HeroModel RandomTank()
 		{
 			CheckHeroListPopulated();
 
-			int randomHero = random.Next(allTanks.Count);
-			string tankOne = allTanks[randomHero].HeroTags[1];
-			return tankOne;
+			List<HeroModel> randomTankList = TagFinder("Tank");
+			int randomIndex = random.Next(randomTankList.Count);
+			HeroModel randomTank = randomTankList[randomIndex];
+
+			return randomTank;
 		}
 
-		public string RandomSupport()
+		public HeroModel RandomSupport()
 		{
 			CheckHeroListPopulated();
 
-			int randomHero = random.Next(allSupport.Count);
-			//string supportOne = allSupport[randomHero].HeroTags[1];
-			string supportOne = allSupport[randomHero].HeroName;
-			return supportOne;
+			List<HeroModel> randomSupportList = TagFinder("Support");
+			int randomIndex = random.Next(randomSupportList.Count);
+			HeroModel randomSupport = randomSupportList[randomIndex];
+			
+			return randomSupport;
+		}
+
+		public HeroModel RandomDamage()
+		{
+			CheckHeroListPopulated();
+
+			List<HeroModel> randomDamageList = TagFinder("Damage");
+			int randomIndex = random.Next(randomDamageList.Count);
+			HeroModel randomDamage = randomDamageList[randomIndex];
+
+			return randomDamage;
+		}
+
+		private List<HeroModel> TagFinder(string tag)
+		{
+			List<HeroModel> relevantModels = new List<HeroModel>();
+			
+			foreach (HeroModel model in allHeroes)
+			{
+				if(model.HeroTags.Contains(tag))
+				{
+					relevantModels.Add(model);
+				}
+			}
+			return relevantModels;
 		}
 
 		private void CheckHeroListPopulated()
 		{
-			if (allTanks.Any<HeroModel>() == false)
+			if (allHeroes.Any<HeroModel>() == false)
 			{
 				PopulateTanks();
-			}
-
-			if (allSupport.Any<HeroModel>() == false)
-			{
 				PopulateSupport();
+				PopulateDamage();
 			}
 		}
 
@@ -62,13 +86,13 @@ namespace RandomizerLib
 			HeroModel wreckingBall = new HeroModel("Wrecking Ball", heroClass, "Ball");
 			HeroModel zarya = new HeroModel("Zarya", heroClass, "ZOOP");
 
-			allTanks.Add(dva);
-			allTanks.Add(orisa);
-			allTanks.Add(reinhardt);
-			allTanks.Add(roadhog);
-			allTanks.Add(winston);
-			allTanks.Add(wreckingBall);
-			allTanks.Add(zarya);
+			allHeroes.Add(dva);
+			allHeroes.Add(orisa);
+			allHeroes.Add(reinhardt);
+			allHeroes.Add(roadhog);
+			allHeroes.Add(winston);
+			allHeroes.Add(wreckingBall);
+			allHeroes.Add(zarya);
 		}
 
 		private void PopulateSupport()
@@ -83,13 +107,52 @@ namespace RandomizerLib
 			HeroModel moira = new HeroModel("Moira", heroClass, "OP AF");
 			HeroModel zenyatta = new HeroModel("Zenyatta", heroClass, "Focus");
 
-			allSupport.Add(ana);			
-			allSupport.Add(baptiste);
-			allSupport.Add(brigitte);
-			allSupport.Add(lucio);
-			allSupport.Add(mercy);
-			allSupport.Add(moira);
-			allSupport.Add(zenyatta);
+			allHeroes.Add(ana);			
+			allHeroes.Add(baptiste);
+			allHeroes.Add(brigitte);
+			allHeroes.Add(lucio);
+			allHeroes.Add(mercy);
+			allHeroes.Add(moira);
+			allHeroes.Add(zenyatta);
+		}
+
+		private void PopulateDamage()
+		{
+			const string heroClass = "Damage";
+
+			HeroModel ashe = new HeroModel("Ashe", heroClass, "idk");
+			HeroModel bastion = new HeroModel("Bastion", heroClass, "idk");
+			HeroModel doomfist = new HeroModel("Doomfist", heroClass, "idk");
+			HeroModel genji = new HeroModel("Genji", heroClass, "idk");
+			HeroModel hanzo = new HeroModel("Hanzo", heroClass, "idk");
+			HeroModel junkrat = new HeroModel("Junkrat", heroClass, "idk");
+			HeroModel mcCree = new HeroModel("McCree", heroClass, "idk");
+			HeroModel mei = new HeroModel("Mei", heroClass, "idk");
+			HeroModel pharah = new HeroModel("Pharah", heroClass, "idk");
+			HeroModel reaper = new HeroModel("Reaper", heroClass, "idk");
+			HeroModel soldier = new HeroModel("Soldier: 76", heroClass, "idk");
+			HeroModel sombra = new HeroModel("Sombra", heroClass, "idk");
+			HeroModel symmetra = new HeroModel("Symmetra", heroClass, "idk");
+			HeroModel torbjorn = new HeroModel("Torbjörn", heroClass, "idk");
+			HeroModel tracer = new HeroModel("Tracer", heroClass, "idk");
+			HeroModel widowmaker = new HeroModel("Widowmaker", heroClass, "idk");
+
+			allHeroes.Add(ashe);
+			allHeroes.Add(bastion);
+			allHeroes.Add(doomfist);
+			allHeroes.Add(genji);
+			allHeroes.Add(hanzo);
+			allHeroes.Add(junkrat);
+			allHeroes.Add(mcCree);
+			allHeroes.Add(mei);
+			allHeroes.Add(pharah);
+			allHeroes.Add(reaper);
+			allHeroes.Add(soldier);
+			allHeroes.Add(sombra);
+			allHeroes.Add(symmetra);
+			allHeroes.Add(torbjorn);
+			allHeroes.Add(tracer);
+			allHeroes.Add(widowmaker);
 		}
 	}
 }

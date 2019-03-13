@@ -23,7 +23,7 @@ namespace OverRandomUI
 		Font headerFont;
 		Font labelFont;
 
-		RandomSelector selectRandomTank = new RandomSelector();
+		RandomSelector randomSelection = new RandomSelector();
 
 		public MainWindow()
 		{
@@ -37,20 +37,32 @@ namespace OverRandomUI
 			AddFontMemResourceEx(fontPtr, (uint)Properties.Resources.OverwatchFont.Length, IntPtr.Zero, ref dummy);
 			System.Runtime.InteropServices.Marshal.FreeCoTaskMem(fontPtr);
 
-			headerFont = new Font(fonts.Families[0], 72.0F);
+			headerFont = new Font(fonts.Families[0], 60.0F);
 			labelFont = new Font(fonts.Families[0], 24.0F);			
 		}
 
 		private void MainWindow_Load(object sender, EventArgs e)
 		{
-			label1.Font = headerFont;
-			label2.Font = labelFont;
+			randomTankLabel.Font = labelFont;
+			randomHealerLabel.Font = labelFont;
+			randomDamageLabel.Font = labelFont;
+			overRandomLabel.Font = headerFont;
 		}
 
-		private void button1_Click(object sender, EventArgs e)
+		private void randomTankButton_Click(object sender, EventArgs e)
 		{
-			label1.Text = selectRandomTank.RandomTank();
-			label2.Text = selectRandomTank.RandomSupport();
+			randomTankLabel.Text = randomSelection.RandomTank().HeroName;
+			
+		}
+
+		private void randomHealerButton_Click(object sender, EventArgs e)
+		{
+			randomHealerLabel.Text = randomSelection.RandomSupport().HeroName;
+		}
+
+		private void randomDamageButton_Click(object sender, EventArgs e)
+		{
+			randomDamageLabel.Text = randomSelection.RandomDamage().HeroName;
 		}
 	}
 }
