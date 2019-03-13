@@ -105,7 +105,7 @@ namespace OverRandomUI
 		private void aboutButton_Click(object sender, EventArgs e)
 		{
 			AboutWindow aboutWindow = new AboutWindow();
-			aboutWindow.Show();
+			aboutWindow.ShowDialog();
 		}
 
 		private void WipeAllLabels()

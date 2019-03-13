@@ -81,6 +81,16 @@ namespace OverRandomUI.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Icon similar to (Icon).
+        /// </summary>
+        internal static System.Drawing.Icon or_icon_DqM_icon {
+            get {
+                object obj = ResourceManager.GetObject("or_icon_DqM_icon", resourceCulture);
+                return ((System.Drawing.Icon)(obj));
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized resource of type System.Byte[].
         /// </summary>
         internal static byte[] OverwatchFont {

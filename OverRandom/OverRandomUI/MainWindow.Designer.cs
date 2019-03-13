@@ -28,6 +28,7 @@
 		/// </summary>
 		private void InitializeComponent()
 		{
+			System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainWindow));
 			this.randomTankOneLabel = new System.Windows.Forms.Label();
 			this.randomSupportOneLabel = new System.Windows.Forms.Label();
 			this.randomTankButton = new System.Windows.Forms.Button();
@@ -43,13 +44,13 @@
 			this.bottomBorderPanel = new System.Windows.Forms.Panel();
 			this.randomAnyButton = new System.Windows.Forms.Button();
 			this.dividerPanel = new System.Windows.Forms.Panel();
-			this.closeButton = new System.Windows.Forms.Panel();
-			this.minimizeButton = new System.Windows.Forms.Panel();
 			this.randomTankTwoLabel = new System.Windows.Forms.Label();
 			this.randomSupportTwoLabel = new System.Windows.Forms.Label();
 			this.randomDamageTwoLabel = new System.Windows.Forms.Label();
 			this.twoOfEachButton = new System.Windows.Forms.Button();
 			this.aboutButton = new System.Windows.Forms.Button();
+			this.minimizeButton = new System.Windows.Forms.Panel();
+			this.closeButton = new System.Windows.Forms.Panel();
 			this.SuspendLayout();
 			// 
 			// randomTankOneLabel
@@ -215,28 +216,6 @@
 			this.dividerPanel.Size = new System.Drawing.Size(700, 2);
 			this.dividerPanel.TabIndex = 10;
 			// 
-			// closeButton
-			// 
-			this.closeButton.BackgroundImage = global::OverRandomUI.Properties.Resources.closebutton;
-			this.closeButton.Location = new System.Drawing.Point(675, 6);
-			this.closeButton.Name = "closeButton";
-			this.closeButton.Size = new System.Drawing.Size(16, 16);
-			this.closeButton.TabIndex = 11;
-			this.closeButton.MouseClick += new System.Windows.Forms.MouseEventHandler(this.closeButton_MouseClick);
-			this.closeButton.MouseEnter += new System.EventHandler(this.PanelHoverColor);
-			this.closeButton.MouseLeave += new System.EventHandler(this.PanelDefaultColor);
-			// 
-			// minimizeButton
-			// 
-			this.minimizeButton.BackgroundImage = global::OverRandomUI.Properties.Resources.minimizebutton;
-			this.minimizeButton.Location = new System.Drawing.Point(655, 6);
-			this.minimizeButton.Name = "minimizeButton";
-			this.minimizeButton.Size = new System.Drawing.Size(16, 16);
-			this.minimizeButton.TabIndex = 11;
-			this.minimizeButton.MouseClick += new System.Windows.Forms.MouseEventHandler(this.minimizeButton_MouseClick);
-			this.minimizeButton.MouseEnter += new System.EventHandler(this.PanelHoverColor);
-			this.minimizeButton.MouseLeave += new System.EventHandler(this.PanelDefaultColor);
-			// 
 			// randomTankTwoLabel
 			// 
 			this.randomTankTwoLabel.AutoSize = true;
@@ -296,6 +275,28 @@
 			this.aboutButton.UseVisualStyleBackColor = false;
 			this.aboutButton.Click += new System.EventHandler(this.aboutButton_Click);
 			// 
+			// minimizeButton
+			// 
+			this.minimizeButton.BackgroundImage = global::OverRandomUI.Properties.Resources.minimizebutton;
+			this.minimizeButton.Location = new System.Drawing.Point(655, 6);
+			this.minimizeButton.Name = "minimizeButton";
+			this.minimizeButton.Size = new System.Drawing.Size(16, 16);
+			this.minimizeButton.TabIndex = 11;
+			this.minimizeButton.MouseClick += new System.Windows.Forms.MouseEventHandler(this.minimizeButton_MouseClick);
+			this.minimizeButton.MouseEnter += new System.EventHandler(this.PanelHoverColor);
+			this.minimizeButton.MouseLeave += new System.EventHandler(this.PanelDefaultColor);
+			// 
+			// closeButton
+			// 
+			this.closeButton.BackgroundImage = global::OverRandomUI.Properties.Resources.closebutton;
+			this.closeButton.Location = new System.Drawing.Point(675, 6);
+			this.closeButton.Name = "closeButton";
+			this.closeButton.Size = new System.Drawing.Size(16, 16);
+			this.closeButton.TabIndex = 11;
+			this.closeButton.MouseClick += new System.Windows.Forms.MouseEventHandler(this.closeButton_MouseClick);
+			this.closeButton.MouseEnter += new System.EventHandler(this.PanelHoverColor);
+			this.closeButton.MouseLeave += new System.EventHandler(this.PanelDefaultColor);
+			// 
 			// MainWindow
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -325,7 +326,9 @@
 			this.Controls.Add(this.randomSupportOneLabel);
 			this.Controls.Add(this.randomTankOneLabel);
 			this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+			this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
 			this.Name = "MainWindow";
+			this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
 			this.Text = "Overwatch Randomizer";
 			this.Load += new System.EventHandler(this.MainWindow_Load);
 			this.ResumeLayout(false);

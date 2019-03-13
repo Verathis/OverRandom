@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Diagnostics;
 using System.Drawing;
 using System.Drawing.Text;
 using System.Linq;
@@ -25,6 +26,7 @@ namespace OverRandomUI
 
 		Font headerFont;
 		Font labelFont;
+		Font contentFont;
 
 		public AboutWindow()
 		{
@@ -40,6 +42,7 @@ namespace OverRandomUI
 
 			headerFont = new Font(fonts.Families[0], 60.0F);
 			labelFont = new Font(fonts.Families[0], 20.0F);
+			contentFont = new Font(fonts.Families[0], 14.0F);
 		}
 
 		private void closeButton_MouseEnter(object sender, EventArgs e)
@@ -75,6 +78,25 @@ namespace OverRandomUI
 		private void AboutWindow_Load(object sender, EventArgs e)
 		{
 			aboutHeaderLabel.Font = labelFont;
+			contentLabel.Font = contentFont;
+			twitchLabel.Font = contentFont;
+			twitterLabel.Font = contentFont;
+			githubLabel.Font = contentFont;
+		}
+
+		private void twitchLabel_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+		{
+			Process.Start("www.twitch.tv/verathis");
+		}
+
+		private void twitterLabel_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+		{
+			Process.Start("www.twitter.com/Verathis");
+		}
+
+		private void githubLabel_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+		{
+			Process.Start("https://github.com/Verathis/OverRandom");
 		}
 	}
 }
