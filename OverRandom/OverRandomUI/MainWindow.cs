@@ -63,6 +63,7 @@ namespace OverRandomUI
 			randomTankButton.Font = buttonFont;
 			twoOfEachButton.Font = buttonFont;
 			singleHeroLabel.Font = singleLabelFont;
+			aboutButton.Font = buttonFont;
 		}
 
 		private void randomAnyButton_Click(object sender, EventArgs e)
@@ -99,6 +100,12 @@ namespace OverRandomUI
 			randomSupportTwoLabel.Text = twoOfEach[3].HeroName;
 			randomDamageOneLabel.Text = twoOfEach[4].HeroName;
 			randomDamageTwoLabel.Text = twoOfEach[5].HeroName;
+		}
+
+		private void aboutButton_Click(object sender, EventArgs e)
+		{
+			AboutWindow aboutWindow = new AboutWindow();
+			aboutWindow.Show();
 		}
 
 		private void WipeAllLabels()
@@ -145,6 +152,8 @@ namespace OverRandomUI
 		private void minimizeButton_MouseClick(object sender, MouseEventArgs e)
 		{
 			this.WindowState = FormWindowState.Minimized;
-		}		
+		}
+
+		
 	}
 }

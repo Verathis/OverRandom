@@ -49,6 +49,7 @@
 			this.randomSupportTwoLabel = new System.Windows.Forms.Label();
 			this.randomDamageTwoLabel = new System.Windows.Forms.Label();
 			this.twoOfEachButton = new System.Windows.Forms.Button();
+			this.aboutButton = new System.Windows.Forms.Button();
 			this.SuspendLayout();
 			// 
 			// randomTankOneLabel
@@ -279,6 +280,22 @@
 			this.twoOfEachButton.UseVisualStyleBackColor = false;
 			this.twoOfEachButton.Click += new System.EventHandler(this.twoOfEachButton_Click);
 			// 
+			// aboutButton
+			// 
+			this.aboutButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(137)))), ((int)(((byte)(0)))));
+			this.aboutButton.FlatAppearance.BorderSize = 0;
+			this.aboutButton.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(161)))), ((int)(((byte)(51)))));
+			this.aboutButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+			this.aboutButton.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(243)))), ((int)(((byte)(243)))), ((int)(((byte)(243)))));
+			this.aboutButton.Location = new System.Drawing.Point(12, 308);
+			this.aboutButton.Name = "aboutButton";
+			this.aboutButton.Padding = new System.Windows.Forms.Padding(0, 1, 0, 0);
+			this.aboutButton.Size = new System.Drawing.Size(120, 30);
+			this.aboutButton.TabIndex = 4;
+			this.aboutButton.Text = "About";
+			this.aboutButton.UseVisualStyleBackColor = false;
+			this.aboutButton.Click += new System.EventHandler(this.aboutButton_Click);
+			// 
 			// MainWindow
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -297,6 +314,7 @@
 			this.Controls.Add(this.movementPanel);
 			this.Controls.Add(this.randomDamageTwoLabel);
 			this.Controls.Add(this.randomDamageOneLabel);
+			this.Controls.Add(this.aboutButton);
 			this.Controls.Add(this.twoOfEachButton);
 			this.Controls.Add(this.randomDamageButton);
 			this.Controls.Add(this.randomSupportButton);
@@ -338,6 +356,7 @@
 		private System.Windows.Forms.Label randomSupportTwoLabel;
 		private System.Windows.Forms.Label randomDamageTwoLabel;
 		private System.Windows.Forms.Button twoOfEachButton;
+		private System.Windows.Forms.Button aboutButton;
 	}
 }
 
