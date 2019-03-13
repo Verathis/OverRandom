@@ -68,12 +68,6 @@ namespace RandomizerLib
 			List<HeroModel> randomTankList = TagFinder("Tank");
 			List<HeroModel> randomSupportList = TagFinder("Support");
 			List<HeroModel> randomDamageList = TagFinder("Damage");
-			//List<HeroModel> twoTanks = TwoUniqueRandoms(randomTankList);
-			//List<HeroModel> twoSupport = TwoUniqueRandoms(randomSupportList);
-			//List<HeroModel> twoDamage = TwoUniqueRandoms(randomDamageList);
-			//twoOfEach.AddRange(twoTanks);
-			//twoOfEach.AddRange(twoSupport);
-			//twoOfEach.AddRange(twoDamage);
 			twoOfEach.AddRange(TwoUniqueRandoms(randomTankList));
 			twoOfEach.AddRange(TwoUniqueRandoms(randomSupportList));
 			twoOfEach.AddRange(TwoUniqueRandoms(randomDamageList));
