@@ -23,15 +23,7 @@ namespace OverRandomUI
 		Font headerFont;
 		Font labelFont;
 
-		const string tankClass = "Tank";
-
-		HeroModel dva = new HeroModel("D.Va", tankClass);
-		HeroModel orisa = new HeroModel("Orisa", tankClass);
-		HeroModel reinhardt = new HeroModel("Reinhardt", tankClass);
-		HeroModel roadhog = new HeroModel("Roadhog", tankClass);
-		HeroModel winston = new HeroModel("Winston", tankClass);
-		HeroModel wreckingBall = new HeroModel("Wrecking Ball", tankClass);
-		HeroModel zarya = new HeroModel("Zarya", tankClass);
+		RandomSelector selectRandomTank = new RandomSelector();
 
 		public MainWindow()
 		{
@@ -57,8 +49,8 @@ namespace OverRandomUI
 
 		private void button1_Click(object sender, EventArgs e)
 		{
-			//label1.Text = dva.TestMethod();
-			//label2.Text = roadhog.TestMethod();
+			label1.Text = selectRandomTank.RandomTank();
+			label2.Text = selectRandomTank.RandomSupport();
 		}
 	}
 }

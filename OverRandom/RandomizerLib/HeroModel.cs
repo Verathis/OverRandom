@@ -9,16 +9,20 @@ namespace RandomizerLib
 	public class HeroModel
 	{
 		public string HeroName { get; set; }
-		public string HeroClass { get; set; }
+		public List<string> HeroTags;
 
 		public HeroModel()
 		{
+			HeroTags = new List<string>();
 		}
 
-		public HeroModel(string heroName, string heroClass) : this()
+		public HeroModel(string heroName, params string[] tags) : this()
 		{
-			this.HeroName = heroName;
-			this.HeroClass = heroClass;
+			HeroName = heroName;
+			foreach (string tag in tags)
+			{
+				HeroTags.Add(tag);
+			}			
 		}
 	}
 }
