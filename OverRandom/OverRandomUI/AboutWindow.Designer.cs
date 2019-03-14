@@ -100,7 +100,7 @@
 			this.contentLabel.Location = new System.Drawing.Point(3, 39);
 			this.contentLabel.Name = "contentLabel";
 			this.contentLabel.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
-			this.contentLabel.Size = new System.Drawing.Size(496, 104);
+			this.contentLabel.Size = new System.Drawing.Size(495, 104);
 			this.contentLabel.TabIndex = 17;
 			this.contentLabel.Text = "Version 0.1\r\nCreated by Verathis";
 			// 
